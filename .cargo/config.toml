@@ -1,0 +1,9 @@
+[build]
+target = "xtensa-esp32-espidf"
+
+[target.xtensa-esp32-espidf]
+runner = "espflash flash --monitor"
+linker = "ldproxy"
+
+[unstable]
+build-std = ["std", "panic_abort"]

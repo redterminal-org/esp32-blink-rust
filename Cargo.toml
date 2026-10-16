@@ -1,0 +1,19 @@
+[package]
+name = "esp32-blink-rust"
+version = "0.1.0"
+edition = "2021"
+build = "build.rs"
+
+[dependencies]
+esp-idf-sys = "0.36"
+
+[build-dependencies]
+embuild = "0.33"
+
+[package.metadata.esp-idf-sys]
+esp_idf_version = "tag:v5.1.4"
+esp_idf_tools_install_dir = "global"
+extra_components = [
+  { component_dirs = ["components/arduino_bridge"] },
+  { remote_component = { name = "espressif/arduino-esp32", version = "3.0.7" } },
+]
